@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "es5",
+        "sourceMap": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "noImplicitAny": true,
+        "noEmitOnError": true,
+        "esModuleInterop": true,
+        "moduleResolution": "Node"
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
