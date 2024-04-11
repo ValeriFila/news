@@ -5,10 +5,27 @@ module.exports = {
         jest: true,
     },
     extends: [
+        'standard-with-typescript',
         'plugin:react/recommended',
         'airbnb',
     ],
-    overrides: [],
+    overrides: [
+        {
+            env: {
+                node: true,
+            },
+            files: [
+                '.eslintrc.{js,cjs}',
+            ],
+            parserOptions: {
+                sourceType: 'script',
+            },
+        },
+    ],
+    plugins: [
+        'react',
+        'react-hooks',
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -17,15 +34,13 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: [
-        'react',
-        'react-hooks',
-    ],
     globals: {
         NodeJS: true,
         JSX: true,
     },
     rules: {
+        'no-unused-vars': 'warn',
+        'no-undef': 'warn',
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'react/jsx-filename-extension': [1, {
@@ -33,7 +48,6 @@ module.exports = {
         }],
         'import/no-unresolved': 0,
         'import/prefer-default-export': 0,
-        'no-unused-vars': 1,
         indent: [2, 4, {
             SwitchCase: 1,
             VariableDeclarator: 'first',
