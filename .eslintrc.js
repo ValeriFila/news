@@ -5,26 +5,8 @@ module.exports = {
         jest: true,
     },
     extends: [
-        'standard-with-typescript',
         'plugin:react/recommended',
         'airbnb',
-    ],
-    overrides: [
-        {
-            env: {
-                node: true,
-            },
-            files: [
-                '.eslintrc.{js,cjs}',
-            ],
-            parserOptions: {
-                sourceType: 'script',
-            },
-        },
-    ],
-    plugins: [
-        'react',
-        'react-hooks',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -33,6 +15,18 @@ module.exports = {
         },
         ecmaVersion: 'latest',
         sourceType: 'module',
+    },
+    plugins: [
+        'react',
+        'react-hooks',
+        '@typescript-eslint',
+    ],
+    settings: {
+        'import/resolver': {
+            typescript: {
+                project: 'tsconfig.json',
+            },
+        },
     },
     globals: {
         NodeJS: true,

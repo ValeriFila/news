@@ -8,13 +8,30 @@
         "noImplicitAny": true,
         "noEmitOnError": true,
         "esModuleInterop": true,
-        "moduleResolution": "Node"
+        "moduleResolution": "Node",
+        "strictNullChecks": true,
+        "resolveJsonModule": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "useDefineForClassFields": true,
+        "allowImportingTsExtensions": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+        }
     },
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
     },
+    "outDir": "./dist",
+    "include": [
+        "src/**/*"
+    ],
     "exclude": [
         "node_modules"
     ]

@@ -1,12 +1,13 @@
-import webpack from 'webpack'
+import type { BuildOptions } from 'config/build/types/config'
+import type webpack from 'webpack'
 
-export const buildResolvers = (): webpack.ResolveOptions => {
+export const buildResolvers = (options: BuildOptions): webpack.ResolveOptions => {
     return {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
-        extensionAlias: {
-            '.js': ['.js', '.ts'],
-            '.cjs': ['.cjs', '.cts'],
-            '.mjs': ['.mjs', '.mts'],
+        preferAbsolute: true,
+        modules: [options.paths.src, 'node_modules'],
+        alias: {
+            '@': options.paths.src,
         },
     }
 }

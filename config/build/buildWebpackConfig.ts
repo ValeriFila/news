@@ -1,9 +1,9 @@
-import webpack from 'webpack'
-import { buildDevServer } from './buildDevServer'
-import { buildLoaders } from './buildLoaders'
-import { buildPlugins } from './buildPlugins'
-import { buildResolvers } from './buildResolvers'
-import { BuildOptions } from './types/config'
+import type webpack from 'webpack'
+import { buildDevServer } from './buildDevServer.ts'
+import { buildLoaders } from './buildLoaders.ts'
+import { buildPlugins } from './buildPlugins.ts'
+import { buildResolvers } from './buildResolvers.ts'
+import { type BuildOptions } from './types/config.ts'
 
 export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration => {
     const {
@@ -14,18 +14,19 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
 
     return {
         mode,
-        devtool: isDev ? 'inline-source-map' : undefined,
+        devtool: 'inline-source-map',
         entry: paths.entry,
         output: {
             filename: '[name].[contenthash].js',
             path: paths.dist,
             clean: true,
+            // publicPath: '/',
         },
         plugins: buildPlugins(options),
         module: {
             rules: buildLoaders(),
         },
-        resolve: buildResolvers(),
-        devServer: isDev ? buildDevServer(options) : undefined,
+        resolve: buildResolvers(options),
+        devServer: buildDevServer(options),
     }
 }
