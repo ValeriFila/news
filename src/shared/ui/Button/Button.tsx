@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames.ts'
 import './Button.scss'
-import { ButtonHTMLAttributes, FC } from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 
 export enum ThemeButton {
     CLEAR = 'clear',
@@ -9,20 +9,25 @@ export enum ThemeButton {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     className?: string
     theme?: ThemeButton
+    children: React.ReactNode
+    toggleTheme: () => void,
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button = (props: ButtonProps) => {
     const {
         className,
         children,
         theme = ThemeButton.CLEAR,
+        toggleTheme,
     } = props
 
     return (
-        <Button
+        <button
+            type='button'
+            onClick={toggleTheme}
             className={classNames('Button', {}, [className!, theme!])}
         >
             {children}
-        </Button>
+        </button>
     )
 }

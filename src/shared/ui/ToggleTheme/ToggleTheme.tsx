@@ -15,7 +15,7 @@ export const ToggleTheme = ({ className }: ToggleThemeProps) => {
     return (
         <Button
             theme={ThemeButton.CLEAR}
-            onClick={toggleTheme}
+            toggleTheme={toggleTheme}
             className={classNames('ToggleTheme', {}, [className!])}
         >
             { theme === Theme.LIGHT ? ( 
