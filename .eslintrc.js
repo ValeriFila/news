@@ -31,6 +31,7 @@ module.exports = {
     globals: {
         NodeJS: true,
         JSX: true,
+        __IS_DEV__: true,
     },
     rules: {
         'no-unused-vars': 'warn',

@@ -9,8 +9,8 @@ export enum ThemeButton {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     className?: string
     theme?: ThemeButton
-    children: React.ReactNode
-    toggleTheme: () => void,
+    children?: React.ReactNode
+    toggle: () => void,
 }
 
 export const Button = (props: ButtonProps) => {
@@ -18,13 +18,13 @@ export const Button = (props: ButtonProps) => {
         className,
         children,
         theme = ThemeButton.CLEAR,
-        toggleTheme,
+        toggle,
     } = props
 
     return (
         <button
             type='button'
-            onClick={toggleTheme}
+            onClick={toggle}
             className={classNames('Button', {}, [className!, theme!])}
         >
             {children}

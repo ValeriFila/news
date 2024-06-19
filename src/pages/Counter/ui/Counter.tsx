@@ -1,6 +1,5 @@
 import '@/pages/Counter/ui/Counter.scss'
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const Counter = () => {
     return (

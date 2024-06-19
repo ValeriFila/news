@@ -1,34 +1,47 @@
 import { classNames } from '@/shared/lib/classNames/classNames.ts'
 import './Navbar.scss'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink.tsx'
+import { ToggleLanguage } from '@/shared/ui/ToggleLanguage/ToggleLanguage.tsx'
 import { ToggleTheme } from '@/shared/ui/ToggleTheme/ToggleTheme.tsx'
+import { useTranslation } from 'react-i18next'
 
 interface NavbarProps {
     className?: string
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
+    const { t } = useTranslation()
+    
     return (
         <div className={classNames('Navbar', {}, [className!])}>
-            <ToggleTheme />
-            <AppLink
-                to='/welcome'
-                theme={AppLinkTheme.SECONDARY}
+            <div
+                className={classNames('links', {}, [])}
             >
-                О нас
-            </AppLink>
-            <AppLink
-                to='/counter'
-                theme={AppLinkTheme.SECONDARY}
-            >
-                Калькулятор
-            </AppLink>
-            <AppLink
-                to='/'
-                theme={AppLinkTheme.SECONDARY}
-            >
-                На главную
-            </AppLink>
+                <AppLink
+                    to='/welcome'
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('О нас')}
+                </AppLink>
+                <AppLink
+                    to='/counter'
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('Калькулятор')}
+                </AppLink>
+                <AppLink
+                    to='/'
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('На главную')}
+                </AppLink>
+                <AppLink
+                    to='/'
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('Привет')}
+                </AppLink>
+            </div>
         </div>
     )
 }

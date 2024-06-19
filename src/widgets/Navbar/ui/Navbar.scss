@@ -1,9 +1,15 @@
 .Navbar {
     background-color: var(--inverted-bg-color);
     width: 100%;
+    height: var(--havbar-height);
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 2rem;
-    padding: 0.5rem;
-    height: var(--navbar-height);
+    padding: 0 2rem;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
 }
