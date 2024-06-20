@@ -3,7 +3,7 @@ import './Button.scss'
 import React, { ButtonHTMLAttributes } from 'react'
 
 export enum ThemeButton {
-    CLEAR = 'clear',
+    CLEAR = "clear",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
@@ -20,6 +20,7 @@ export const Button = (props: ButtonProps) => {
         theme = ThemeButton.CLEAR,
         toggle,
     } = props
+
 
     return (
         <button
