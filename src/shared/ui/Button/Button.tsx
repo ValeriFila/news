@@ -10,7 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     className?: string
     theme?: ThemeButton
     children?: React.ReactNode
-    toggle: () => void,
+    toggle: () => void
 }
 
 export const Button = (props: ButtonProps) => {

@@ -9,15 +9,14 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: 2rem 0;х
+    padding: 2rem 0;
 
     &__content {
         display: flex;
-        flex-direction: row;
+        flex-flow: row wrap;
         align-items: center;
         justify-content: center;
         gap: 1.5rem;
-        flex-wrap: wrap;
 
     }
 }
