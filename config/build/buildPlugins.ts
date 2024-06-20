@@ -1,3 +1,4 @@
+import ESLintWebpackPlugin from 'eslint-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack from 'webpack'
@@ -15,5 +16,6 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPlu
             __IS_DEV__: isDev,
         }),
         new webpack.HotModuleReplacementPlugin(),
+        new ESLintWebpackPlugin(),
     ]
 }

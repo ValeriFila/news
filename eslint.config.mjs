@@ -24,7 +24,12 @@ export default [
         ...globals.browser,
         ...globals.es2021,
       },
-      parserOptions: eslintReact.configs.recommended.parserOptions,
+      parserOptions: {
+        project: './tsconfig.json',
+        extraFileExtensions: ['.vue'],
+        sourceType: 'module',
+        parser: '@typescript-eslint/parser'
+      }
     }
   },
   pluginJs.configs.recommended,

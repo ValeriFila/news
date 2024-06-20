@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
+import { App } from '../../../App.tsx'
 import { Counter } from '@/pages/Counter'
 import { WelcomePage } from '@/pages/WelcomePage'
-import { App } from '../../../App.tsx'
 
 export const router = createBrowserRouter([
     {
