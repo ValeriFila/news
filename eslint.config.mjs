@@ -44,7 +44,8 @@ export default [
   },
   {
     rules: {
-      'no-unused-vars': 'warn',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'warn',
       'no-undef': 'warn',
       'react/jsx-indent': [2, 4],
       'react/jsx-indent-props': [2, 4],
