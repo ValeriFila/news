@@ -1,14 +1,20 @@
 {
     "compilerOptions": {
+        "outDir": "./dist/",
         "module": "ESNext",
         "target": "es5",
+        "jsx": "react-jsx",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"],
+        },
         "sourceMap": true,
         "allowSyntheticDefaultImports": true,
         "allowJs": true,
         "noImplicitAny": true,
         "noEmitOnError": true,
         "esModuleInterop": true,
-        "moduleResolution": "Node",
+        "moduleResolution": "node",
         "strictNullChecks": true,
         "resolveJsonModule": true,
         "forceConsistentCasingInFileNames": true,
@@ -17,22 +23,10 @@
         "allowImportingTsExtensions": true,
         "isolatedModules": true,
         "noEmit": true,
-        "jsx": "react-jsx",
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["./src/*"],
-        }
     },
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
-    },
-    "outDir": "./dist",
-    "include": [
-        "."
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    }
 }

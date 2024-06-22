@@ -1,8 +1,7 @@
-import { classNames } from '@/shared/lib/classNames/classNames.ts'
-import './ToggleLanguage.scss'
-import { Button } from '@/shared/ui/Button/Button.tsx'
 import { useTranslation } from 'react-i18next'
 import Lang from '../../assets/icons/book-dictionary-education-svgrepo-com.svg'
+import { classNames } from '@/shared/lib/classNames/classNames.ts'
+import { Button } from '@/shared/ui/Button/Button.tsx'
 
 interface ToggleLanguageProps {
     className?: string
@@ -18,7 +17,7 @@ export const ToggleLanguage = ({ className }: ToggleLanguageProps) => {
     return (
         <Button
             toggle={toggle}
-            className={classNames('ToggleLanguage', {}, [className!])}
+            className={classNames('', {}, [className!])}
         >
             <Lang />
         </Button>

@@ -1,11 +1,12 @@
 import globals from "globals"
 import pluginJs from "@eslint/js"
 import tseslint from "typescript-eslint"
-import eslintReact from "eslint-plugin-react"
 import eslintReactHooks from 'eslint-plugin-react-hooks'
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js"
 import jsxA11y from "eslint-plugin-jsx-a11y"
 import importEslint from "eslint-plugin-import"
+import jest from 'jest'
+import tsJest from 'ts-jest'
 
 export default [
   {
@@ -23,6 +24,7 @@ export default [
         ...globals.node,
         ...globals.browser,
         ...globals.es2021,
+        ...globals.jest
       },
       parserOptions: {
         project: './tsconfig.json',
@@ -40,6 +42,8 @@ export default [
       'typescript-eslint': tseslint,
       'jsx-a11y': jsxA11y,
       'import': importEslint,
+      'jest': jest,
+      'ts-jest': tsJest
     }
   },
   {
@@ -109,6 +113,11 @@ export default [
       }],
       radix: 1,
       'no-bitwise': 0,
+      'object-curly-spacing': ["error", "always"],
+      'keyword-spacing': ["error", { "before": true , "after": true}],
+      'newline-before-return': 2,
+      'eol-last': 2,
+      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
       'no-return-assign': 1,
       'consistent-return': 1,
       'no-case-declarations': 0,
@@ -128,7 +137,7 @@ export default [
       camelcase: 1,
       'react/destructuring-assignment': 1,
       'jsx-a11y/mouse-events-have-key-events': 0,
-      'object-curly-newline': 0,
+      'object-curly-newline': 0
     }
   },
   {

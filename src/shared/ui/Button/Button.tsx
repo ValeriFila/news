@@ -21,12 +21,11 @@ export const Button = (props: ButtonProps) => {
         toggle,
     } = props
 
-
     return (
         <button
             type='button'
             onClick={toggle}
-            className={classNames('Button', {}, [className!, theme!])}
+            className={classNames('', {}, [className!, theme!])}
         >
             {children}
         </button>
