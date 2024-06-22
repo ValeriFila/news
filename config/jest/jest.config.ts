@@ -2,12 +2,7 @@ import type { Config } from 'jest'
 
 const config: Config = {
     rootDir: '../../',
-    preset: 'ts-jest',
     testEnvironment: 'jsdom',
-    transform: {
-        '^.+\\.(ts|tsx)?$': ['ts-jest', { tsconfig: '<rootDir>tsconfig.json' }],
-        '^.+\\.(js|jsx)$': 'babel-jest',
-    },
     transformIgnorePatterns: ['node_modules/(?!(sucrase)/)'],
     clearMocks: true,
     moduleFileExtensions: [
@@ -24,7 +19,7 @@ const config: Config = {
         '<rootDir>node_modules'
     ],
     testMatch: [
-        '<rootDir>/src/**/*(*.)@(spec|test).[tj]s?(x)',
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
     testPathIgnorePatterns: [
         '<rootDir>node_modules'
