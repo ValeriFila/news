@@ -1,4 +1,4 @@
-import { validateValue } from './validateValue'
+import { validateValue } from '@/shared/lib/helpers/validateValue/validateValue.ts'
 
 describe('validateValue', () => {
     test('Среднее значение', () => {

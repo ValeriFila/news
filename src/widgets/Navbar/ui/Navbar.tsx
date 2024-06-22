@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { getUsers } from '@/shared/lib/helpers/getUsers/getUsers.ts'
 import { classNames } from '@/shared/lib/classNames/classNames.ts'
 import './Navbar.scss'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink.tsx'
@@ -9,6 +10,7 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation()
+    getUsers()
 
     return (
         <div className={classNames('Navbar', {}, [className!])}>
