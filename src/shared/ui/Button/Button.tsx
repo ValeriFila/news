@@ -10,7 +10,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
     className?: string
     theme?: ThemeButton
     children?: React.ReactNode
-    toggle: () => void
+    onClick: () => void
 }
 
 export const Button = (props: ButtonProps) => {
@@ -18,13 +18,13 @@ export const Button = (props: ButtonProps) => {
         className,
         children,
         theme = ThemeButton.CLEAR,
-        toggle,
+        onClick,
     } = props
 
     return (
         <button
             type='button'
-            onClick={toggle}
+            onClick={onClick}
             className={classNames('', {}, [className!, theme!])}
         >
             {children}

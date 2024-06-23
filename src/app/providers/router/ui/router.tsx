@@ -1,7 +1,12 @@
+import { Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 import { App } from '../../../App.tsx'
-import { Counter } from '@/pages/Counter'
-import { WelcomePage } from '@/pages/WelcomePage'
+import { PageLoader } from '@/widgets/PageLoader'
+import {
+    Counter,
+    WelcomePage,
+    NotFoundPage
+} from '@/pages'
 
 export const router = createBrowserRouter([
     {
@@ -15,6 +20,10 @@ export const router = createBrowserRouter([
             {
                 path: '/welcome',
                 element: <WelcomePage />,
+            },
+            {
+                path: '*',
+                element: <NotFoundPage />,
             },
         ],
     },

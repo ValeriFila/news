@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import { ThemeProvider } from '@/app/providers/ThemeProvider'
@@ -9,9 +9,7 @@ const root = createRoot(document.getElementById('root')!)
 root.render(
     <React.StrictMode>
         <ThemeProvider>
-            <Suspense fallback={<div>Loading...</div>}>
-                <RouterProvider router={router} />
-            </Suspense>
+            <RouterProvider router={router} />
         </ThemeProvider>
     </React.StrictMode>,
 )

@@ -1,6 +1,7 @@
 import './styles/index.scss'
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
+import { PageLoader } from '@/widgets/PageLoader'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTheme } from '@/app/providers/ThemeProvider'
 import { Navbar } from '@/widgets/Navbar'
@@ -15,7 +16,9 @@ export const App = () => {
             <div className={classNames('content', { }, [])}>
                 <Sidebar />
                 <div className={classNames('page-wrapper', { }, [])}>
-                    <Outlet />
+                    <Suspense fallback={<PageLoader />}>
+                        <Outlet />
+                    </Suspense>
                 </div>
             </div>
         </div>

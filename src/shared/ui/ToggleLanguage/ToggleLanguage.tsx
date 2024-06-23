@@ -16,7 +16,7 @@ export const ToggleLanguage = ({ className }: ToggleLanguageProps) => {
 
     return (
         <Button
-            toggle={toggle}
+            onClick={toggle}
             className={classNames('', {}, [className!])}
         >
             <Lang />
