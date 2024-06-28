@@ -11,7 +11,10 @@ export const App = () => {
     const { theme } = useTheme()
 
     return (
-        <div className={classNames('App', { }, [theme!])}>
+        <div
+            className={classNames('App', { }, [theme!])}
+            data-testid='app'
+        >
             <Navbar />
             <div className={classNames('content', { }, [])}>
                 <Sidebar />

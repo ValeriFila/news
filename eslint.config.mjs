@@ -5,8 +5,6 @@ import eslintReactHooks from 'eslint-plugin-react-hooks'
 import pluginReactConfig from "eslint-plugin-react/configs/recommended.js"
 import jsxA11y from "eslint-plugin-jsx-a11y"
 import importEslint from "eslint-plugin-import"
-import jest from 'jest'
-import tsJest from 'ts-jest'
 
 export default [
   {
@@ -41,9 +39,7 @@ export default [
       'react-hooks': eslintReactHooks,
       'typescript-eslint': tseslint,
       'jsx-a11y': jsxA11y,
-      'import': importEslint,
-      'jest': jest,
-      'ts-jest': tsJest
+      'import': importEslint
     }
   },
   {

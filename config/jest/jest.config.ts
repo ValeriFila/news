@@ -3,6 +3,10 @@ import type { Config } from 'jest'
 const config: Config = {
     rootDir: '../../',
     testEnvironment: 'jsdom',
+    moduleNameMapper: {
+        '\\.(css|less|sass|scss)$': '<rootDir>/config/jest/mocks/styleMock.js',
+        '\\.(svg|png)$': '<rootDir>/config/jest/mocks/fileMock.js'
+    },
     transformIgnorePatterns: ['node_modules/(?!(sucrase)/)'],
     clearMocks: true,
     moduleFileExtensions: [
@@ -26,7 +30,7 @@ const config: Config = {
     ],
     coveragePathIgnorePatterns: [
         '\\\\node_modules\\\\',
-    ]
+    ],
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 

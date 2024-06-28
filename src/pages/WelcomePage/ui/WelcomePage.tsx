@@ -3,7 +3,7 @@ import '@/pages/WelcomePage/ui/WelcomePage.scss'
 
 const WelcomePage = () => {
     return (
-        <div>
+        <div data-testid='welcome'>
             <div className='welcome-page'>
                 Welcome!
             </div>

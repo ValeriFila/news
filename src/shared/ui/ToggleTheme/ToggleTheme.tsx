@@ -1,3 +1,4 @@
+import React from 'react'
 import DarkIcon from '../../assets/icons/theme-dark 1.svg'
 import LightIcon from '../../assets/icons/theme-light 1.svg'
 import { Theme, useTheme } from '@/app/providers/ThemeProvider'

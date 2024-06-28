@@ -1,9 +1,10 @@
+import React from 'react'
+import { useState } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames.ts'
 import './Sidebar.scss'
-import { Button } from '@/shared/ui/Button/Button.tsx'
-import { ToggleLanguage } from '@/shared/ui/ToggleLanguage/ToggleLanguage.tsx'
 import { ToggleTheme } from '@/shared/ui/ToggleTheme/ToggleTheme.tsx'
-import { useState } from 'react'
+import { ToggleLanguage } from '@/shared/ui/ToggleLanguage/ToggleLanguage.tsx'
+import { Button } from '@/shared/ui/Button/Button.tsx'
 import Lines from '@/shared/assets/icons/three-line-horizontal-svgrepo-com.svg'
 
 interface SidebarProps {

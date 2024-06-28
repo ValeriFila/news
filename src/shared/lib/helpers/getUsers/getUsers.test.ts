@@ -32,11 +32,10 @@ describe('getUsers', () => {
     }
 
     test('Получение первого юзера', async () => {
-        // не получается сделать
         (axios.get as jest.Mock).mockResolvedValue(result)
 
         const data = await getUsers()
         expect(axios.get).toHaveBeenCalledTimes(1)
-        expect(data).toEqual(1)
+        expect(data).toBe(1)
     })
 })

@@ -1,7 +1,8 @@
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import Lang from '../../assets/icons/book-dictionary-education-svgrepo-com.svg'
-import { classNames } from '@/shared/lib/classNames/classNames.ts'
-import { Button } from '@/shared/ui/Button/Button.tsx'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { Button } from '@/shared/ui/Button/Button'
 
 interface ToggleLanguageProps {
     className?: string

@@ -1,7 +1,5 @@
-import { Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-import { App } from '../../../App.tsx'
-import { PageLoader } from '@/widgets/PageLoader'
+import { App } from '@/app/App'
 import {
     Counter,
     WelcomePage,

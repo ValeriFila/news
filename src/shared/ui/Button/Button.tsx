@@ -1,6 +1,6 @@
-import { classNames } from '@/shared/lib/classNames/classNames.ts'
-import './Button.scss'
 import React, { ButtonHTMLAttributes } from 'react'
+import { classNames } from '../../lib/classNames/classNames.ts'
+import './Button.scss'
 
 export enum ThemeButton {
     CLEAR = 'clear',
@@ -18,7 +18,7 @@ export const Button = (props: ButtonProps) => {
         className,
         children,
         theme = ThemeButton.CLEAR,
-        onClick,
+        onClick
     } = props
 
     return (

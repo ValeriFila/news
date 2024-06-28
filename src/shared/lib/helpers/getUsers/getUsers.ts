@@ -15,7 +15,7 @@ export const getUsers = async () => {
     try {
         const { data } = await axios.get<Users[]>('https://jsonplaceholder.typicode.com/users')
 
-        return data[0].id
+        return data
     } catch (e) {
 
         return 'Error while getting users'

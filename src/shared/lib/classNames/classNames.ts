@@ -9,4 +9,5 @@ export const classNames = (cls: string, mods: Mods = {}, additional: string[] = 
             .map(([className]) => className),
     ]
         .join(' ')
+        .trim()
 }
