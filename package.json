@@ -1,17 +1,21 @@
 {
   "name": "news",
-  "jest":{
-    "testEnvironment": "jsdom",
-    "moduleNameMapper":{
-      "\\.(css|less|sass|scss)$": "<rootDir>/config/jest/mocks/styleMock.js",
-      "\\.(svg|png)$": "<rootDir>/config/jest/mocks/fileMock.js"
-    }
-  },
   "imports": {
     "@/*": {
       "default": "./src/*",
       "production": "./dist/*"
     }
+  },
+  "jest":{
+    "testEnvironment": "jsdom",
+    "moduleNameMapper":{
+      "\\.(css|less|sass|scss)$": "<rootDir>/config/jest/mocks/styleMock.js",
+      "\\.(svg|png)$": "<rootDir>/config/jest/mocks/fileMock.js",
+      "^@[/](.+)": "<rootDir>/src/$1"
+    },
+    "moduleDirectories": [
+      "node_modules", "src"
+    ]
   },
   "version": "1.0.0",
   "dependencies": {

@@ -5,7 +5,8 @@ const config: Config = {
     testEnvironment: 'jsdom',
     moduleNameMapper: {
         '\\.(css|less|sass|scss)$': '<rootDir>/config/jest/mocks/styleMock.js',
-        '\\.(svg|png)$': '<rootDir>/config/jest/mocks/fileMock.js'
+        '\\.(svg|png)$': '<rootDir>/config/jest/mocks/fileMock.js',
+        '^@[/](.+)': '<rootDir>/src/$1'
     },
     transformIgnorePatterns: ['node_modules/(?!(sucrase)/)'],
     clearMocks: true,
@@ -20,13 +21,14 @@ const config: Config = {
         'node'
     ],
     moduleDirectories: [
-        '<rootDir>node_modules'
+        'node_modules',
+        'src'
     ],
     testMatch: [
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+        '<rootDir>/src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
     testPathIgnorePatterns: [
-        '<rootDir>node_modules'
+        '<rootDir>/node_modules'
     ],
     coveragePathIgnorePatterns: [
         '\\\\node_modules\\\\',

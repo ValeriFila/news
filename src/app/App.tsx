@@ -1,6 +1,7 @@
 import './styles/index.scss'
 import React, { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
+import ErrorBoundary from '@/pages/ErrorBoundary/ui/ErrorBoundary.tsx'
 import { PageLoader } from '@/widgets/PageLoader'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTheme } from '@/app/providers/ThemeProvider'
@@ -12,13 +13,13 @@ export const App = () => {
 
     return (
         <div
-            className={classNames('App', { }, [theme!])}
+            className={classNames('App', {}, [theme!])}
             data-testid='app'
         >
             <Navbar />
-            <div className={classNames('content', { }, [])}>
+            <div className={classNames('content', {}, [])}>
                 <Sidebar />
-                <div className={classNames('page-wrapper', { }, [])}>
+                <div className={classNames('page-wrapper', {}, [])}>
                     <Suspense fallback={<PageLoader />}>
                         <Outlet />
                     </Suspense>
