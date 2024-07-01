@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
+import { Table } from '@/entities/Table/Table.tsx'
 import { App } from '@/app/App'
 import {
     Counter,
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
             {
                 path: '/welcome',
                 element: <WelcomePage />,
+            },
+            {
+                path: '/table',
+                element: <Table />,
             },
             {
                 path: '*',

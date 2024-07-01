@@ -1,0 +1,43 @@
+.table {
+    display: grid;
+    max-width: 1200px;
+    border-top: black solid 2px;
+    border-left: black solid 2px;
+    border-bottom: black solid 2px;
+    border-right: black solid 1px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    &__column {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    &__cell {
+        background: white;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        min-height: 40px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+
+@media (width <= 940px) {
+    .table {
+        max-width: 700px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}
+
+@media (width <= 1200px) {
+    .table {
+        font: var(--font-m);
+        max-width: 800px;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+
